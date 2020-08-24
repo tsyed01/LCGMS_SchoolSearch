@@ -1,0 +1,311 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/6/2020 2:45:20 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="335DPC903"
+  DTS:CreatorName="OWS\tsyed"
+  DTS:DTSID="{4ED8A93B-5B0D-44E2-A8E8-167C8B4E8DD3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LCGMS_SchoolSearch"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{45B39A14-D23B-461D-9B94-E6F6E2A2EE53}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ES11VdSINFSQL01.Supertable.lcgmsappuser]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{82EC37AC-A126-4145-8B7F-22297A34EA7D}"
+      DTS:ObjectName="ES11VdSINFSQL01.Supertable.lcgmsappuser">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOEL2pU9uLEK9DaK/PHIjFgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABxl4+glashdCeroIatnMCpAAAAAASAAACgAAAAEAAAAPxkuYN2w+v3nkCzlkpex2oQAAAAr3hEQVAXUIE9VPLK9GQv+hQAAAD6YMJGevuUNYkZ3QvflzKTgL33iQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:Description="SMTP Connection Manager"
+      DTS:DTSID="{1A3C8C44-76E1-498B-92A6-AF8DEE3137BF}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=NYCBOEMAILSERVER1;UseWindowsAuthentication=False;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C2285671-37DF-485A-AB8F-5630A94D4164}"
+      DTS:ObjectName="ES11VdSINFSQL01SupertableLcgmsappuser_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;password=welcome;Initial Catalog=LCGMS;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{910663B2-F0C4-4682-89CB-1A9FF6137BAE}"
+      DTS:ObjectName="LCGMS_SchoolSearch_ToLine">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DATALoadLCGMS@schools.nyc.gov</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C4C8D614-B68C-4B9F-A905-511A69316716}"
+      DTS:ObjectName="SqlDatabasePW">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">welcome</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D3E5480D-72A1-4FF3-9D7F-887CD6C091A4}"
+      DTS:ObjectName="SqlDatabaseServer">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ES11VdSINFSQL01</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{A8989689-A482-4142-B05A-4FAE7A7FE28D}"
+      DTS:ObjectName="SqlDatabaseUID">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">lcgmsappuser</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51E1FE16-E1E8-4639-878A-84BE2A844934}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::ES11VdSINFSQL01SupertableLcgmsappuser_ConnectionString]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ES11VdSINFSQL01SupertableLcgmsappuser_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=ES11VdSINFSQL01;User ID=lcgmsappuser;password=welcome;Initial Catalog=LCGMS;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5E72F1E7-A3B7-4342-B1E2-4E72D252D2A4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::LCGMS_SchoolSearch_ToLine]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LCGMS_SchoolSearch_ToLine">
+      <DTS:VariableValue
+        DTS:DataType="8">DATALoadLCGMS@schools.nyc.gov</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E3E8C65-2184-4285-B047-2B4C7DC288BF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::SqlDatabasePW]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SqlDatabasePW">
+      <DTS:VariableValue
+        DTS:DataType="8">welcome</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38A78872-FC9E-480A-B198-93FBFC5AC85B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::SqlDatabaseServer]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SqlDatabaseServer">
+      <DTS:VariableValue
+        DTS:DataType="8">ES11VdSINFSQL01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB01C350-DC3E-4B85-8EA0-ADD6610BFA84}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::SqlDatabaseUID]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SqlDatabaseUID">
+      <DTS:VariableValue
+        DTS:DataType="8">lcgmsappuser</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Step10 - Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Step10 - Execute SQL Task"
+      DTS:DTSID="{776A01BD-7395-43FE-B455-8FB528AACBE9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step10 - Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{82EC37AC-A126-4145-8B7F-22297A34EA7D}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXECUTE Supertable.dbo.usp_LCGMS_SchoolSearch;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step10 Execute SQLTask - Failed to Execute SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Step10 Execute SQLTask - Failed to Execute SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:DTSID="{89310C3D-3D2F-477D-B27E-3191BFEB19E0}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step10 Execute SQLTask - Failed to Execute SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"LCGMS_SchoolSearch SSIS Job Failed to Execute at SQL Server: " +  @[$Package::SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[$Package::LCGMS_SchoolSearch_ToLine]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{1A3C8C44-76E1-498B-92A6-AF8DEE3137BF}"
+          SendMailTask:From="LCGMS_SchoolSearch1@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="LCGMS_SchoolSearch SSIS Job Failed to Execute at SQL Server: ES11VdSINFSQL01"
+          SendMailTask:MessageSource="SSIS Job LCGMS_SchoolSearch Failed to Execute in Step10 Execute SQLTask - SP: Supertable.dbo.usp_LCGMS_SchoolSearch&#xA;&#xA;The purpose of this job is to create the data for the School Search online module in a SQL table: Supertable.dbo.LCGMS_SchoolSearch&#xA;&#xA;Please contact LCGMS group in case of any concerns or issues.&#xA;&#xA;Thanks,&#xA;&#xA;Tahir A. Syed&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Step10 Execute SQLTask - Successfully Executed SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Step10 Execute SQLTask - Successfully Executed SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:DTSID="{7cd8e618-686e-42bd-9e04-e6a5cf2c1824}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Step10 Execute SQLTask - Successfully Executed SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Subject">"LCGMS_SchoolSearch SSIS Job Successfully Executed at SQL Server: " +  @[$Package::SqlDatabaseServer]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ToLine">@[$Package::LCGMS_SchoolSearch_ToLine]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{1A3C8C44-76E1-498B-92A6-AF8DEE3137BF}"
+          SendMailTask:From="LCGMS_SchoolSearch@schools.nyc.gov"
+          SendMailTask:To="DATALoadLCGMS@schools.nyc.gov"
+          SendMailTask:Subject="LCGMS_SchoolSearch SSIS Job Successfully Executed at SQL Server: ES11VdSINFSQL01"
+          SendMailTask:MessageSource="SSIS Job LCGMS_SchoolSearch Successfully Executed.&#xA;&#xA;The purpose of this job is to create the data for the School Search online module in a SQL table: Supertable.dbo.LCGMS_SchoolSearch&#xA;&#xA;Please contact LCGMS group in case of any concerns or issues.&#xA;&#xA;Thanks,&#xA;&#xA;Tahir A. Syed&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E55C4296-94AC-408D-B627-D9B5352ADC26}"
+      DTS:From="Package\Step10 - Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Step10 Execute SQLTask - Successfully Executed SP Supertable dbo usp_LCGMS_SchoolSearch" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D508714-3293-4DC9-9FCB-8E3BC75FD208}"
+      DTS:From="Package\Step10 - Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Step10 Execute SQLTask - Failed to Execute SP Supertable dbo usp_LCGMS_SchoolSearch"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="343,42"
+          Id="Package\Step10 - Execute SQL Task"
+          TopLeft="203,66" />
+        <NodeLayout
+          Size="343,42"
+          Id="Package\Step10 Execute SQLTask - Failed to Execute SP Supertable dbo usp_LCGMS_SchoolSearch"
+          TopLeft="630,66" />
+        <NodeLayout
+          Size="332,42"
+          Id="Package\Step10 Execute SQLTask - Successfully Executed SP Supertable dbo usp_LCGMS_SchoolSearch"
+          TopLeft="204,192" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="546,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,0"
+              Start="0,0"
+              End="76.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="23.00865234375,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="372.25,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
